@@ -7,8 +7,6 @@ dotenv.config();
 // middleware to validate token
 const verifyToken = (req, res, next) => {
 
-  console.log(req.headers.authorization);
-
   if (!req.headers.authorization) {
     return res.status(401).json({message: 'Acesso Negado!'});
   }
