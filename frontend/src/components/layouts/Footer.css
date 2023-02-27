@@ -7,3 +7,8 @@
   color: #444;
   border-top: 1px solid #666;
 }
+
+.footer a {
+  text-decoration: none;
+  color: #1D479D;
+}
