@@ -20,7 +20,7 @@ function Home() {
         <p>Veja os detalhes de cada um e conheça o tutor deles</p>
       </div>
       <div className='pet_container'>
-        {pets.length > 0
+        {pets.length && pets.length > 0
           && pets.map((pet, i) => (
             <div key={pet.name+i} className='pet_card'>
               <div
