@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 import api from '../../../utils/api';
 import RoundedImage from '../../layouts/RoundedImage';
+import { baseUrl } from '../../../utils/baseUrl';
 
 function MyAdoptions() {
   const [pets, setPets] = useState([]);
@@ -32,7 +33,7 @@ function MyAdoptions() {
           && pets.map((pet) => (
             <div key={pet._id} className='petlist_row'>
               <RoundedImage
-                src={`${process.env.REACT_APP_URL}${pet.images[0]}.png`}
+                src={`${baseUrl}${pet.images[0]}.png`}
                 alt={pet.name}
                 width='px75'
               />

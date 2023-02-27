@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './Home.css';
 import api from '../../utils/api';
+import { baseUrl } from '../../utils/baseUrl';
 
 function Home() {
 
@@ -25,7 +26,7 @@ function Home() {
             <div key={pet.name+i} className='pet_card'>
               <div
                 className='pet_card_image'
-                style={{backgroundImage: `url(${process.env.REACT_APP_URL}${pet.images[0]}.png)`}}
+                style={{backgroundImage: `url(${baseUrl}${pet.images[0]}.png)`}}
               ></div>
               <h3>{pet.name}</h3>
               <p>

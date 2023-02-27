@@ -8,6 +8,7 @@ import './Profile.css';
 import '../../form/Form.css';
 import useFlashMessage from '../../../hooks/useFlashMessage';
 import RoundedImage from '../../layouts/RoundedImage';
+import { baseUrl } from '../../../utils/baseUrl';
 
 function Profile() {
 
@@ -81,7 +82,7 @@ function Profile() {
             src={
               preview
               ? URL.createObjectURL(preview)
-              : `${process.env.REACT_APP_URL}${user.image}.png`
+              : `${baseUrl}${user.image}.png`
             }
             alt={user.name}
           />

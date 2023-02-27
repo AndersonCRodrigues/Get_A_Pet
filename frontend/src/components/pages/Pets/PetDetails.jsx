@@ -5,6 +5,7 @@ import useFlashMessage from '../../../hooks/useFlashMessage';
 import api from '../../../utils/api';
 
 import './PetDetails.css';
+import { baseUrl } from '../../../utils/baseUrl';
 
 function PetDetails() {
 
@@ -50,7 +51,7 @@ function PetDetails() {
       <div className='pet_images'>
         {pet.images.map((image, index) => (
           <img
-            src={`${process.env.REACT_APP_URL}${image}.png`}
+            src={`${baseUrl}${image}.png`}
             alt={pet.name}
             key={pet.name+index}
             />

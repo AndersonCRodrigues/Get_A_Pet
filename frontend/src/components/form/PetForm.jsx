@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Form.css';
 import Input from './Input';
 import Select from './Select';
+import { baseUrl } from '../../utils/baseUrl';
 
 function PetForm({petData, btnText, handleSubmit}) {
 
@@ -41,7 +42,7 @@ function PetForm({petData, btnText, handleSubmit}) {
           && pet.images.map((image, index) => (
             <img
             key={`${pet.name}_${index}`}
-            src={`${process.env.REACT_APP_URL}${image}.png`}
+            src={`${baseUrl}${image}.png`}
             alt={pet.name}
             />
           ))
