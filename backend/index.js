@@ -16,7 +16,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Solve CORS
-app.use(cors({ credentials: true, origin: process.env.FRONTEND_URL}));
+// app.use(cors({ credentials: true, origin: process.env.FRONTEND_URL}));
+app.use((res, req, next) => {
+  res.headers('Access-Control-Allow-Origin', '*');
+  app.use(cors());
+  next();
+});
 
 // Routes
 app.use('/users', userRoutes);
