@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     api.get('/pets')
-      .then((response) => setPets(response.data.pets))
+      .then((response) => setPets(response.data.pets));
   }, []);
 
   return (
@@ -20,7 +20,7 @@ function Home() {
         <p>Veja os detalhes de cada um e conheça o tutor deles</p>
       </div>
       <div className='pet_container'>
-        {pets.length && pets.length > 0
+        {pets.length
           && pets.map((pet, i) => (
             <div key={pet.name+i} className='pet_card'>
               <div
