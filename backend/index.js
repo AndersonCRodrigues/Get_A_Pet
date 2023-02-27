@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors')
 const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const userRoutes = require('./routes/UserRoutes');
 const petRoutes = require('./routes/PetRoutes');
@@ -13,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Solve CORS
-app.use(cors({ credentials: true, origin: 'http://localhost:3000'}));
+app.use(cors({ credentials: true, origin: process.env.FRONTEND_URL}));
 
 // Routes
 app.use('/users', userRoutes);
