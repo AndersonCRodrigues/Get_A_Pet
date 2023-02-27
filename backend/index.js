@@ -16,7 +16,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Solve CORS
-app.use(cors({ credentials: true, origin: process.env.FRONTEND_URL}));
+app.use(cors({
+  origin: 'https://main--cosmic-vacherin-7a0cc2.netlify.app/',
+}));
 
 // Routes
 app.use('/users', userRoutes);
