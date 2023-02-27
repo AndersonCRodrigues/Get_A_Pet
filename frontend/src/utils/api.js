@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: process.env.REACT_APP_SERVER,
+  baseURL: 'https://get-a-pet-9or3.onrender.com/',
 });
