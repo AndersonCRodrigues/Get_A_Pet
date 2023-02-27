@@ -16,12 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Solve CORS
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URL);
-  res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
-  app.use(cors());
-  next();
-});
+app.use(cors());
 
 // Routes
 app.use('/users', userRoutes);
