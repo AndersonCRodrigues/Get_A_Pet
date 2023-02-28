@@ -16,7 +16,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Solve CORS
-// app.use(cors());
+const corsOptions = {
+  origin: true,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // Routes
 app.use('/users', userRoutes);
